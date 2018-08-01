@@ -9,7 +9,8 @@
           <a v-for="nav in navs" @click="navclick(nav)" :style="{color:nav.href==currentnav?'#4cb5ff':'#000'}">{{nav.value}}</a>
         </div>
         <div class="topbar-loginregister" v-if="!islogin">
-          <Button size="large" @click="gologinpage">登录</Button>
+          <!-- <Button size="large" @click="gologinpage">登录</Button> -->
+          <router-link class="footer-bar-company" to="/login"><Button size="large" type="primary" ghost>登录</Button></router-link>
           <Button size="large" type="primary">注册</Button>
         </div>
         <div class="topbar-right" v-if="islogin">

@@ -30,14 +30,18 @@
         </Button>
       </Form>
     </div>
+
+    <footer-bar></footer-bar>
   </div>
 </template>
 <script>
 import TopBar from '@/components/common/TopBar'
+import FooterBar from '@/components/common/FooterBar';
   export default {
     name: 'Login',
     components:{
-      TopBar
+      TopBar,
+      FooterBar
     },
     created(){
       

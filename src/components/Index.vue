@@ -97,7 +97,7 @@
            <div style="font-size:1rem;margin:5px 0;">分钟级跟踪监测，实时优化投放策略</div>
            <div style="font-size:1rem;margin:5px 0;">阅读计费，风险低，高效达成营销目标</div>
            <div style="margin:20px 0;">
-             <Button type="default" ghost onclick="javascript:location.href='login';">立即推广</Button>
+              <router-link to="/login"><Button type="default" ghost>立即推广</Button></router-link>
            </div>
         </div>
       </div>
@@ -108,7 +108,7 @@
            <div style="font-size:1rem;margin:5px 0;">一手价格，平台担保交易</div>
            <div style="font-size:1rem;margin:5px 0;">免费数据跟踪，省心省力达成营销目标</div>
            <div  style="margin:20px 0;">
-             <Button type="default" ghost onclick="javascript:location.href='login';">立即推广</Button>
+              <router-link to="/login"><Button type="default" ghost>立即推广</Button></router-link>
            </div>
         </div>
       </div>
@@ -156,8 +156,7 @@
 <script>
 import TopBar from '@/components/common/TopBar';
 import FooterBar from '@/components/common/FooterBar';
-import Swiper from 'swiper'; 
-import 'swiper/dist/css/swiper.min.css';
+
   export default {
     name: 'Index',
     components:{
@@ -177,6 +176,7 @@ import 'swiper/dist/css/swiper.min.css';
     
     },
     mounted(){
+        var Swiper=this.Swiper;
        var mySwiper = new Swiper('.swiper-container', {
           autoplay:true,
           loop:true,

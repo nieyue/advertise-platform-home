@@ -8,6 +8,8 @@ import iView from 'iview'
 import 'iview/dist/styles/iview.css';
 import Qs from 'qs'
 import wangeditor from 'wangeditor'
+import Swiper from 'swiper'; 
+import 'swiper/dist/css/swiper.min.css';
 import axiosbusiness from "@/components/service/axiosbusiness"
 import business from "@/components/service/business"
 import MyUpload from '@/components/common/MyUpload'
@@ -24,6 +26,7 @@ axios.defaults.imgURL=""||axios.defaults.baseURL;
 Vue.prototype.Qs=Qs
 Vue.prototype.utils=utils
 Vue.prototype.wangeditor=wangeditor
+Vue.prototype.Swiper=Swiper
 Vue.prototype.axiosbusiness=axiosbusiness
 Vue.prototype.business=business
 Vue.use(VueAxios, axios)

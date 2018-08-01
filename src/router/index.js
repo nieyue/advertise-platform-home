@@ -39,6 +39,26 @@ const router= new Router({
       component: resolve=>require(['@/components/Help'],resolve)
     },
     {
+      path: '/companyProfile',
+      name: '公司简介',
+      component: resolve=>require(['@/components/CompanyProfile'],resolve)
+    },
+    {
+      path: '/companyCulture',
+      name: '企业文化',
+      component: resolve=>require(['@/components/CompanyCulture'],resolve)
+    },
+    {
+      path: '/companyRecruit',
+      name: '招聘英才',
+      component: resolve=>require(['@/components/CompanyRecruit'],resolve)
+    },
+    {
+      path: '/companyContact',
+      name: '联系我们',
+      component: resolve=>require(['@/components/CompanyContact'],resolve)
+    },
+    {
       path: '/login',
       name: '登录',
       component: resolve=>require(['@/components/Login'],resolve)
