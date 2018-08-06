@@ -190,9 +190,6 @@ import FooterBar from '@/components/common/FooterBar';
 </script>
 <style lang="less">
 @import "Index.less";
-//tags选项卡
-.ivu-tabs-nav{
-  margin-left:392px;
-}
+
 </style>
 

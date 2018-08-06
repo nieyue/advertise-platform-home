@@ -18,10 +18,11 @@
         </Card>
     </div>
     <!--帮助中心菜单 end-->
-
+    <!--帮助中心列表 -->
     <div style="display:inline-block;margin-top:80px;vertical-align:top;width:800px;border:1px solid #ececec;">
-        <Collapse simple  style="display:inline-block;width:800px;" v-if="status==1">
-            <Panel :name="index+'index'"  v-for="( commonProblem,index) of commonProblemList">
+      <!--帮助中心 常见问题 -->
+        <Collapse simple  style="display:inline-block;width:800px;" v-if="status==1" value="commonProblem">
+            <Panel :name="index+'commonProblem'" :key="index" v-for="( commonProblem,index) in commonProblemList">
               <Icon type="md-help-circle" style="color:red;font-size:2rem;"/>
                 {{commonProblem.q}}
                 <p slot="content" style="white-space:pre-line;display:inline-block;padding:10px;">
@@ -29,8 +30,10 @@
                 </p>
             </Panel>
         </Collapse>
-        <Collapse simple  style="display:inline-block;width:800px;" v-if="status==2">
-            <Panel :name="index+'index'"  v-for="( advertiseProblem,index) of advertiseProblemList">
+         <!--帮助中心 常见问题 end-->
+          <!--帮助中心 广告主-->
+        <Collapse simple  style="display:inline-block;width:800px;" v-if="status==2" value="advertiseProblem">
+            <Panel :name="index+'advertiseProblem'" :key="index"  v-for="( advertiseProblem,index) in advertiseProblemList">
               <Icon type="md-help-circle" style="color:red;font-size:2rem;"/>
                 {{advertiseProblem.q}}
                 <p slot="content" style="white-space:pre-line;display:inline-block;padding:10px;">
@@ -38,8 +41,10 @@
                 </p>
             </Panel>
         </Collapse>
-        <Collapse simple  style="display:inline-block;width:800px;" v-if="status==3">
-            <Panel :name="index+'index'"  v-for="( channelProblem,index) of channelProblemList">
+        <!--帮助中心 广告主 end-->
+        <!--帮助中心 媒体主-->
+        <Collapse simple  style="display:inline-block;width:800px;" v-if="status==3" value="channelProblem">
+            <Panel :name="index+'channelProblem'" :key="index"  v-for="( channelProblem,index) in channelProblemList">
               <Icon type="md-help-circle" style="color:red;font-size:2rem;"/>
                 {{channelProblem.q}}
                 <p slot="content" style="white-space:pre-line;display:inline-block;padding:10px;">
@@ -47,11 +52,13 @@
                 </p>
             </Panel>
         </Collapse>
+        <!--帮助中心 媒体主 end-->
       <!-- 用户协议 -->
         <div v-if="status==4" v-html='up' style="white-space:pre-line;display:inline-block;padding:20px;">
         </div>
       <!-- 用户协议 end-->
     </div>
+     <!--帮助中心列表 end-->
   <footer-bar></footer-bar>
 </div>
 </template>

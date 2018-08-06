@@ -11,7 +11,7 @@
         <div class="topbar-loginregister" v-if="!islogin">
           <!-- <Button size="large" @click="gologinpage">登录</Button> -->
           <router-link class="footer-bar-company" to="/login"><Button size="large" type="primary" ghost>登录</Button></router-link>
-          <Button size="large" type="primary">注册</Button>
+          <router-link class="footer-bar-company" to="/register"><Button size="large" type="primary">注册</Button></router-link>
         </div>
         <div class="topbar-right" v-if="islogin">
             <span  class="topbar-right-logintext" v-text="account.realname||account.nickname||account.phone" ></span>
@@ -27,7 +27,7 @@
        //设定当前路径显示
        this.currentnav=this.routerPath;
        
-      if(this.routerPath.indexOf("/main")>-1||this.routerPath.indexOf("/login")>-1){
+      if(this.routerPath.indexOf("/main")>-1||this.routerPath.indexOf("/login")>-1||this.routerPath.indexOf("/register")>-1){
         //是否登陆
         this.getIslogin();
        }
@@ -118,8 +118,11 @@
         if(!sessionStorage.getItem("account")){
           sessionStorage.clear()
           this.$emit("islogin",this.islogin);
-          this.$router.push('/login')
-          this.$Message.info('请登录')
+          if(this.routerPath.indexOf("/main")>-1||this.routerPath.indexOf("/login")>-1){
+            this.$router.push('/login')
+          }else if(this.routerPath.indexOf("/register")>-1){
+            this.$router.push('/register')
+          }
           return;
         }
         this.axios({
