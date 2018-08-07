@@ -16,6 +16,15 @@ npm run build
 
 # build for production and view the bundle analyzer report
 npm run build --report
-```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+#预加载
+npm install prerender-spa-pugin --save
+#在webpack.prod.config.js中加入
+const PrerenderSpaPlugin = require('prerender-spa-plugin')
+#在 pugin中加入 
+new PrerenderSpaPlugin(
+      //将渲染的文件放到dist目录下
+      path.join(__dirname, '../dist'), 
+      //需要预渲染的路由信息
+      ['/','/index',"/weixinspread","/subscriptionfuns","/channelorder","/help","/register","/login","/companyProfile","/companyCulture","/companyRecruit","/companyContact"]
+    ),
